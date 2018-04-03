@@ -11,6 +11,7 @@ import static Simulation.Apiary.getApiaryInstance;
 public class Start {
 
     public static void main(String[] args) {
+        getApiaryInstance();
 
         Scanner scan = new Scanner(System.in);
         printMenu();
@@ -36,11 +37,12 @@ public class Start {
                     getApiaryInstance().giveResource(Integer.parseInt(scan.next()), scan.next(), Integer.parseInt(scan.next()));
                     break;
                 case "tick":
-                    if (scan.hasNextInt()) {
-                        getApiaryInstance().updateTicks(Integer.parseInt(scan.next()));
+                    if (!scan.hasNext()) {
+                        getApiaryInstance().updateTicks();
                     }
                     else {
-                        getApiaryInstance().updateTicks();
+                        getApiaryInstance().updateTicks(Integer.parseInt(scan.next()));
+
                     }
                     break;
                 case "summary":

@@ -17,7 +17,10 @@ public final class Apiary {
     private int numHives = 0;
     private Map<Integer, Beehive> beehives = new HashMap<Integer, Beehive>();
 
-    private Apiary() {}
+    private Apiary() {
+        spawnBeehive(0, 0, "Killer");
+        spawnBeehive(100, 100, "Honey");
+    }
 
     public static Apiary getApiaryInstance() {
         return apiaryInstance;
@@ -31,7 +34,7 @@ public final class Apiary {
 
         beehives.put(numHives, newHive);
 
-        System.out.printf("Beehive spawned at %d, %d identified as beehive number %d of species %s", x, y, numHives, species);
+        System.out.printf("\nBeehive spawned at %d, %d identified as beehive number %d of species %s", x, y, numHives, species);
     }
 
     public void summarize(int hive) {

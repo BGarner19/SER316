@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+
+import Bee.Decoration.BeeDecorator;
+import Bee.Decoration.HarvestBeeDecorator;
 import Bee.Species.Bee;
+import Bee.Species.BeeBase;
 import Resource.*;
 
 /**
@@ -52,7 +56,8 @@ public class Beehive {
             }
         }
 
-        while (ticksAlive / 50 > rooms.size()) {
+        while (ticksAlive / determineBuildRate() > rooms.size()) {
+
             addRoom();
         }
 
@@ -69,6 +74,17 @@ public class Beehive {
         }
         else {
             resources.put(resourceType, new ArrayList<>()).add(resource);
+        }
+    }
+
+    public int determineBuildRate() {
+        switch (species.toLowerCase()) {
+            case "honey":
+                return 50 / 5;
+            case "killer":
+                return 50;
+            default:
+                return 100;
         }
     }
 

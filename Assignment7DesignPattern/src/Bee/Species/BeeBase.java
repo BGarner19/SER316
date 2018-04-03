@@ -10,6 +10,19 @@ public class BeeBase implements Bee {
 
     public ArrayList<String> abilities;
     public int attackPower = 0;
+
+    public int getAttackPower() {
+        return attackPower;
+    }
+
+    public int getFertility() {
+        return fertility;
+    }
+
+    public int getWorkSpeed() {
+        return workSpeed;
+    }
+
     public int fertility = 0;
     public int workSpeed = 0;
 

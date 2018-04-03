@@ -14,6 +14,19 @@ public abstract class BeeDecorator implements Bee {
     Bee beeToBeDecorated;
     int attackPower = 0;
     int fertility = 0;
+
+    public int getAttackPower() {
+        return attackPower;
+    }
+
+    public int getFertility() {
+        return fertility;
+    }
+
+    public int getWorkSpeed() {
+        return workSpeed;
+    }
+
     int workSpeed = 0;
 
     public BeeDecorator(Bee beeToBeDecorated) {
