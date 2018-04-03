@@ -1,9 +1,21 @@
 package Bee.Species;
 
-public class BeeBase {
+import java.util.ArrayList;
 
-    public String ability;
-    public int attackPower;
-    public int fertility;
-    public int workSpeed;
+/**
+ * Implementation of the Bee interface. The basic bee with no attributes, ready to be decorated.
+ */
+
+public class BeeBase implements Bee {
+
+    public ArrayList<String> abilities;
+    public int attackPower = 0;
+    public int fertility = 0;
+    public int workSpeed = 0;
+
+    @Override
+    public void setAbility() {}
+
+    public void tickAction() {}
+
 }
